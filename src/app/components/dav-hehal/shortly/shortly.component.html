@@ -6,12 +6,14 @@
         <span *ngIf="!formdata.get('phonenumber1').valid && formdata.get('phonenumber1').touched" class="help-block">
             Please
             Enter Name </span>
-
-        <input *ngIf="addanother" type="text" style="width: 422px;float: right;" class="form-control"
-            placeholder="Add Another Phone Number" formControlName="phonenumber2">
-        <span *ngIf="!formdata.get('phonenumber2').valid && formdata.get('phonenumber2').touched" class="help-block">
-            Please
-            Enter Name </span>
+        <div *ngFor="let item of ngfor">
+            <input *ngIf="addanother" type="text" style="width: 422px;float: right;" class="form-control"
+                placeholder="Add Another Phone Number" formControlName="phonenumber2">
+            <span *ngIf="!formdata.get('phonenumber2').valid && formdata.get('phonenumber2').touched"
+                class="help-block">
+                Please
+                Enter Name </span>
+        </div>
     </div>
     <button type="submit" class="btn btn-primary" style="background-color: hsl(180, 66%, 49%);" (click)="Add()">Add
         Another Phone Number</button>
